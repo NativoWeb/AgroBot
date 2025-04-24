@@ -1,0 +1,42 @@
+import cv2
+import matplotlib.pyplot as plt
+from ultralytics import YOLO
+
+## Dataset
+
+# from roboflow import Roboflow
+# rf = Roboflow(api_key="e6ECprlf43XeiVK5A5ES")
+# project = rf.workspace("me-so4gy").project("agrobot-h8oaf")
+# version = project.version(5)
+# dataset = version.download("yolov8")
+                
+                
+                
+model = YOLO('model/best.pt')
+
+## Entrenamiento del modelo
+
+# model.train(
+#   data=f'{dataset.location}/data.yaml',
+#   epochs=10,
+#   imgsz=640,
+#   task='segment',
+#   save=True
+# )
+
+results = model.predict(
+    source='data/prueba6.jpg',
+    conf=0.25,
+    save=False,
+    task='segment'
+)
+
+
+for result in results:
+  img = result.plot()
+
+  # Mostrar con matplotlib (funciona en casi cualquier entorno)
+  plt.imshow(cv2.cvtColor(img, cv2.COLOR_BGR2RGB))
+  plt.title("YOLOv8 Segmentación")
+  plt.axis('off')
+  plt.show()
