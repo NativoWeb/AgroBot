@@ -25,7 +25,7 @@ model = YOLO('model/best.pt')
 # )
 
 results = model.predict(
-    source='data/prueba6.jpg',
+    source=['data/prueba1.jpg', 'data/prueba2.jpg', 'data/prueba3.jpg', 'data/prueba6.jpg', 'data/prueba5.jpg', 'data/prueba4.jpg'],
     conf=0.25,
     save=False,
     task='segment'
