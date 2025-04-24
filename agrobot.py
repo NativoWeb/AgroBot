@@ -35,7 +35,6 @@ results = model.predict(
 for result in results:
   img = result.plot()
 
-  # Mostrar con matplotlib (funciona en casi cualquier entorno)
   plt.imshow(cv2.cvtColor(img, cv2.COLOR_BGR2RGB))
   plt.title("YOLOv8 Segmentación")
   plt.axis('off')
