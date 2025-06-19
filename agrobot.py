@@ -1,26 +1,31 @@
 import cv2
 import matplotlib.pyplot as plt
 from ultralytics import YOLO
+from roboflow import Roboflow
+import os
+from dotenv import load_dotenv
 
-## Dataset
+load_dotenv()
 
-# from roboflow import Roboflow
+api_key = os.getenv('API_KEY')
+
+print(api_key)
+
 # rf = Roboflow(api_key="e6ECprlf43XeiVK5A5ES")
 # project = rf.workspace("me-so4gy").project("agrobot-h8oaf")
-# version = project.version(5)
+# version = project.version(7)
 # dataset = version.download("yolov8")
+                     
                 
-                
-                
-model = YOLO('model/best.pt')
+model = YOLO('model/best-first.pt')
 
-## Entrenamiento del modelo
+# Entrenamiento del modelo
 
 # model.train(
 #   data=f'{dataset.location}/data.yaml',
 #   epochs=10,
 #   imgsz=640,
-#   task='segment',
+#   task='segment ',
 #   save=True
 # )
 
