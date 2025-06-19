@@ -9,8 +9,6 @@ load_dotenv()
 
 api_key = os.getenv('API_KEY')
 
-print(api_key)
-
 # rf = Roboflow(api_key="e6ECprlf43XeiVK5A5ES")
 # project = rf.workspace("me-so4gy").project("agrobot-h8oaf")
 # version = project.version(7)
