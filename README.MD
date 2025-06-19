@@ -1,8 +1,8 @@
-### 🤖 AgroBot DataSet 
+# 🤖 AgroBot DataSet 
 
 ## Instrucciones de uso
 
-# 🚀 Instalación
+### 🚀 Instalación
 
 1. Clona este repositorio:
 
@@ -25,7 +25,6 @@
 ```
 
 4. Crea y configura las variables de entonor
-
 
 ```
   crea un archivo .env
